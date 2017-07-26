@@ -20,39 +20,70 @@ $(function() {
          * the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the
          * page?
+         * We get the error "Expected 0 not to be 0."
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
+         * Done
          */
+
+         it('URL is defined and the URL is not empty', function() {
+            for (var i = 0; i < allFeeds.length; i++) {
+                var allFeedsUrl = allFeeds[i].url;
+                expect(allFeedsUrl).toBeDefined();
+                expect(allFeedsUrl.length).not.toBe(0);
+            };
+         });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+        it('name is defined and the name is not empty', function() {
+            for (var i = 0; i < allFeeds.length; i++) {
+                var allFeedsName = allFeeds[i].name;
+                expect(allFeedsName).toBeDefined();
+                expect(allFeedsName.length).not.toBe(0);
+            };
+         });
     });
 
 
     /* TODO: Write a new test suite named "The menu" */
-
-        /* TODO: Write a test that ensures the menu element is
+    describe('The Menu', function() {
+         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+         beforeEach(function() {
+            jasmine.getStyleFixtures().fixturesPath = './css';
+            loadStyleFixtures('css/style.css');
+         })
+
+         it('element is hidden by default', function() {
+            var menuSuccess = fixture.find('.slide-menu');
+            console.log("hello");
+            expect(menuSuccess.css('display')).toEqual('inline');
+         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          /*it('menu changes visibility when menu icon is clicked', function() {
+
+          });*/
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
