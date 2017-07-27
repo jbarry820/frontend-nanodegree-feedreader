@@ -23,6 +23,7 @@ $(function() {
          * We get the error "Expected 0 not to be 0."
          */
         it('are defined', function() {
+        console.log("hello");
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -64,14 +65,10 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         beforeEach(function() {
+         it('element is hidden by default', function() {
             jasmine.getStyleFixtures().fixturesPath = './css';
             loadStyleFixtures('css/style.css');
-         })
-
-         it('element is hidden by default', function() {
             var menuSuccess = fixture.find('.slide-menu');
-            console.log("hello");
             expect(menuSuccess.css('display')).toEqual('inline');
          });
 
