@@ -95,7 +95,7 @@ $(function() {
         });
 
         it('loadFeed function is called', function() {
-            var articles = $('.feed .entry-link .entry');
+            var articles = $('.feed .entry');
             expect(articles.length).toBeGreaterThan(0);
 
         });
