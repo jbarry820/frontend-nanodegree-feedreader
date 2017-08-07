@@ -111,7 +111,6 @@ $(function() {
          var currentFeed;
 
          beforeEach(function(done) {
-            $('.feed').empty();
             loadFeed(0, function(){
                 oldFeed = $('.feed').html();
                 loadFeed(1, done);
